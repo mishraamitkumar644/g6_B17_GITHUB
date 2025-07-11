@@ -3,6 +3,11 @@ resource "azurerm_resource_group" "example" {
     location = "West Europe"
 }
 
+resource "azurerm_resource_group" "example1" {
+  name     = "example-resources-${terraform.workspace}"
+    location = "east Europe"
+}
+
 resource "azurerm_virtual_network" "example" {
   name                = "example-network-${terraform.workspace}"
   address_space       = ["10.0.0.0/16"]
